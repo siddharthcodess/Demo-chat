@@ -9,11 +9,21 @@
   <body>
     <section class="navbar">
       <img class="logo" src="./img/logo.png" alt="logo" />
-      <h2 class="description">Talk to strangers!</h2>
+      <h2 class="description">Connecting Strangers!</h2>
       <h2 class="online"></h2>
     </section>
 
     <main class="main">
+      <!-- Placeholder for the click message -->
+      <div id="welcome-message">
+        Click on Start
+        <!-- Developer message -->
+        <div id="developer-message">
+          <div>Developed by</div>
+          <div>Bhuvana & Siddharth</div>
+        </div>
+      </div>
+
       <section class="conversation"></section>
 
       <form class="form">
@@ -44,5 +54,17 @@
 
     <script src="/socket.io/socket.io.js"></script>
     <script src="./script.js"></script>
+    <script>
+      // Function to hide the welcome message
+      function hideWelcomeMessage() {
+        const welcomeMessage = document.getElementById('welcome-message');
+        if (welcomeMessage) {
+          welcomeMessage.style.display = 'none';
+        }
+      }
+
+      // Add an event listener to the Start button
+      document.getElementById('start').addEventListener('click', hideWelcomeMessage);
+    </script>
   </body>
 </html>

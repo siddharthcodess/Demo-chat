@@ -1,14 +1,15 @@
+/* General resets and defaults */
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box;
 }
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
 }
 
 body {
@@ -29,14 +30,15 @@ body {
 }
 
 .logo {
-  height: 20rem;
+  max-width: 100%; /* Make logo responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 8rem; /* Default height */
 }
 
 .description {
   font-size: 2.7rem;
   margin-left: 8rem;
   margin-top: 1rem;
-  transform: rotate(-6deg);
 }
 
 .online {
@@ -103,9 +105,11 @@ body {
   border: 1px solid #cccccc;
   cursor: pointer;
 }
+
 #send {
   color: white;
 }
+
 .btn:focus {
   outline: none;
 }
@@ -132,6 +136,7 @@ body {
 #stop {
   color: white;
 }
+
 .textarea {
   height: 100%;
   resize: none;
@@ -153,8 +158,8 @@ body {
   font-weight: 700;
 }
 
+/* Responsive styles */
 @media only screen and (max-width: 56.25em) {
-  /* 900px */
   .description {
     margin-left: 6rem;
     font-size: 2rem;
@@ -166,14 +171,12 @@ body {
 }
 
 @media only screen and (max-width: 48.125em) {
-  /* 770px */
   .online {
     display: none;
   }
 }
 
 @media only screen and (max-width: 43.75em) {
-  /* 700px */
   .form {
     grid-template-columns: 10rem 1fr 10rem;
   }
@@ -184,7 +187,6 @@ body {
 }
 
 @media only screen and (max-width: 31.25em) {
-  /* 500px */
   .conversation {
     height: 90%;
   }
@@ -200,15 +202,102 @@ body {
 }
 
 @media only screen and (max-width: 32.5em) {
-  /* 520px */
   .description {
     display: none;
   }
 }
 
 @media only screen and (max-width: 28.125em) {
-  /* 450px */
   .logo {
-    height: 12rem;
+    max-height: 6rem; /* Adjust for smaller screens */
   }
 }
+/* Apply a slight scale transformation */
+body {
+  font-family: sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  background-color: #fff7ee;
+  height: 100vh;
+  transform: scale(0.95); /* Scale down the page slightly */
+  transform-origin: top left; /* Keep the transformation origin at the top left */
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+/* Other existing styles */
+
+/* Styling for the welcome message */
+/* Existing styles */
+
+/* Existing styles */
+
+/* Centering and styling for the welcome message */
+#welcome-message {
+  font-size: 2rem; /* Increase the font size if needed */
+  color: #6cb5ff;
+  font-weight: bold; /* Make the text bold */
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the message */
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.8); /* Optional: add a background for better visibility */
+  border-radius: 5px; /* Optional: rounded corners */
+}
+
+/* Styling for the developer message */
+#developer-message {
+  font-size: 1.4rem;
+  color: #333;
+  font-weight: bold; /* Make the text bold */
+  margin-top: 1rem;
+  opacity: 0;
+  animation: fadeIn 2s forwards, slideUp 2s 2s forwards;
+  /* Center text within the div */
+  text-align: center;
+}
+
+#developer-message > div {
+  margin: 0;
+}
+
+/* Animation for fading in and sliding up */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Other existing styles */
+
+/* Ensure the chat container displays messages from bottom to top */
+/* Ensure the chat container displays messages from bottom to top */
+/* Ensure the chat container displays messages from bottom to top */
+.conversation {
+  display: flex;
+  flex-direction: column; /* Normal direction for flow */
+  height: 83%;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  padding: 1.5rem;
+  font-size: 2rem;
+  word-break: break-word;
+  overflow-y: auto;
+}
+
+
+

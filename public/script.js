@@ -175,3 +175,4 @@ function htmlEncode(str) {
     return "&#" + c.charCodeAt(0) + ";";
   });
 }
+
